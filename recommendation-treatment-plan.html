@@ -1,0 +1,525 @@
+<div
+  style="
+    background: var(--white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 52.625rem;
+    position: relative;
+    overflow: hidden;
+  "
+>
+  <div
+    style="
+      padding: 0.75rem 2.5rem 0.75rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: flex-start;
+      align-self: stretch;
+      flex: 1;
+      position: relative;
+    "
+  >
+    <svg
+      class="group-395"
+      style="
+        flex-shrink: 0;
+        width: 10.125rem;
+        height: 8.75rem;
+        position: absolute;
+        left: calc(50% - 5.03125rem);
+        top: calc(50% - 4.375rem);
+        overflow: visible;
+      "
+      width="162"
+      height="140"
+      viewBox="0 0 162 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M43.5725 57.0273V85.9402C43.5725 86.986 43.5725 87.4956 44.9968 87.4956H117.037C118.306 87.4956 118.489 87.072 118.489 85.9864V57.0936L127.345 62.0711C131.038 64.1562 134.703 66.2678 138.423 68.333C138.804 68.486 139.126 68.7536 139.342 69.0974C139.557 69.4412 139.656 69.8434 139.624 70.246V138.536C139.624 139.602 139.422 139.98 138.274 139.98H120.001C118.799 139.98 118.482 139.649 118.482 138.47V109.869C118.482 108.426 118.097 108.161 116.713 108.161H45.2939C43.9438 108.161 43.505 108.406 43.505 109.849V138.311C43.505 139.576 43.2754 140.019 41.8714 139.999H23.7532C22.5314 139.999 22.2614 139.642 22.2614 138.49V70.3783C22.2614 69.7164 22.1264 69.1141 22.9364 68.6706C29.8218 64.891 36.525 61.0254 43.5725 57.0273Z"
+        fill="#8F9BB3"
+        fill-opacity="0.08"
+      />
+      <path
+        d="M161.865 69.3438L146.67 60.7389C125.244 48.6875 103.843 36.5852 82.4665 24.4323C82.044 24.1363 81.5377 23.9774 81.0185 23.9774C80.4993 23.9774 79.993 24.1363 79.5705 24.4323C53.5409 39.2373 27.5112 53.9763 1.48156 68.6489C1.09678 68.874 0.711982 69.0459 0.306956 69.2511C0.0177985 68.7367 -0.0709274 68.1371 0.0572248 67.5634V46.9774C0.000446283 46.5489 0.0834807 46.1138 0.294493 45.7345C0.505505 45.3552 0.833627 45.0511 1.23177 44.8659C27.4774 30.0785 53.7096 15.2471 79.9283 0.371484C80.2539 0.130394 80.6509 0 81.059 0C81.467 0 81.864 0.130394 82.1897 0.371484C108.291 15.2648 134.503 30.1138 160.825 44.9188C161.413 45.2498 162 45.4948 162 46.3619C161.865 53.7953 161.865 61.4868 161.865 69.3438Z"
+        fill="#8F9BB3"
+        fill-opacity="0.08"
+      />
+    </svg>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-self: stretch;
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      {% for plan in treatment_plans %}
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          align-items: center;
+          justify-content: center;
+          align-self: stretch;
+          flex-shrink: 0;
+          position: relative;
+        "
+      >
+        <div
+          style="
+            color: var(--text-color-text-black-black-08, rgba(16, 20, 38, 0.8));
+            text-align: left;
+            font-family: var(
+              --text-sm-bold-font-family,
+              'Inter-Bold',
+              sans-serif
+            );
+            font-size: var(--text-sm-bold-font-size, 0.75rem);
+            line-height: var(--text-sm-bold-line-height, 1.125rem);
+            font-weight: var(--text-sm-bold-font-weight, 700);
+            position: relative;
+            align-self: stretch;
+          "
+        >
+          {{plan.name}}
+        </div>
+        <div
+          style="
+            color: var(--text-color-text-black-black-06, rgba(16, 20, 38, 0.6));
+            text-align: left;
+            font-family: var(
+              --text-sm-regular-font-family,
+              'Inter-Regular',
+              sans-serif
+            );
+            font-size: var(--text-sm-regular-font-size, 0.75rem);
+            line-height: var(--text-sm-regular-line-height, 1.125rem);
+            font-weight: var(--text-sm-regular-font-weight, 400);
+            position: relative;
+            align-self: stretch;
+          "
+        >
+          {{plan.description}}
+        </div>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          align-items: flex-start;
+          justify-content: flex-start;
+          align-self: stretch;
+          flex-shrink: 0;
+          position: relative;
+        "
+      >
+        {% for group in recommendation_groups %}
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+            justify-content: flex-start;
+            align-self: stretch;
+            flex-shrink: 0;
+            position: relative;
+          "
+        >
+          <div
+            style="
+              color: var(
+                --text-color-text-black-black-05,
+                rgba(16, 20, 38, 0.5)
+              );
+              text-align: left;
+              font-family: var(
+                --titles-medium-font-family,
+                'Inter-Medium',
+                sans-serif
+              );
+              font-size: var(--titles-medium-font-size, 0.75rem);
+              line-height: var(--titles-medium-line-height, 1.125rem);
+              letter-spacing: var(--titles-medium-letter-spacing, 0.0625rem);
+              font-weight: var(--titles-medium-font-weight, 500);
+              text-transform: uppercase;
+              position: relative;
+              align-self: stretch;
+            "
+          >
+            {{ group.question }}
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 0.25rem;
+              align-items: flex-start;
+              justify-content: flex-start;
+              align-self: stretch;
+              flex-shrink: 0;
+              position: relative;
+            "
+          >
+            <div
+              style="
+                color: var(
+                  --text-color-text-black-black-06,
+                  rgba(16, 20, 38, 0.6)
+                );
+                text-align: left;
+                font-family: var(
+                  --text-sm-regular-font-family,
+                  'Inter-Regular',
+                  sans-serif
+                );
+                font-size: var(--text-sm-regular-font-size, 0.75rem);
+                line-height: var(--text-sm-regular-line-height, 1.125rem);
+                font-weight: var(--text-sm-regular-font-weight, 400);
+                position: relative;
+                align-self: stretch;
+              "
+            >
+              {{ group.answer }}
+            </div>
+            <div
+              style="
+                border-radius: 0.25rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+                align-items: flex-start;
+                justify-content: flex-start;
+                align-self: stretch;
+                flex-shrink: 0;
+                position: relative;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0rem;
+                  align-items: flex-start;
+                  justify-content: flex-start;
+                  align-self: stretch;
+                  flex-shrink: 0;
+                  position: relative;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0rem;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    align-self: stretch;
+                    flex-shrink: 0;
+                    position: relative;
+                  "
+                >
+                  <div
+                    style="
+                      background: var(--grey-200, #f7f9fc);
+                      border-style: solid;
+                      border-color: var(--grey-400, #e4e9f2);
+                      border-width: 0rem 0rem 0.0625rem 0rem;
+                      padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.5rem;
+                      align-items: center;
+                      justify-content: flex-start;
+                      flex-shrink: 0;
+                      width: 9.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        color: var(
+                          --text-color-text-black-black-08,
+                          rgba(16, 20, 38, 0.8)
+                        );
+                        text-align: left;
+                        font-family: var(
+                          --text-sm-medium-font-family,
+                          'Inter-Medium',
+                          sans-serif
+                        );
+                        font-size: var(--text-sm-medium-font-size, 0.75rem);
+                        line-height: var(
+                          --text-sm-medium-line-height,
+                          1.125rem
+                        );
+                        font-weight: var(--text-sm-medium-font-weight, 500);
+                        position: relative;
+                      "
+                    >
+                      Recommendation
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      background: var(--grey-200, #f7f9fc);
+                      border-style: solid;
+                      border-color: var(--grey-400, #e4e9f2);
+                      border-width: 0rem 0rem 0.0625rem 0rem;
+                      padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.5rem;
+                      align-items: center;
+                      justify-content: flex-start;
+                      flex-shrink: 0;
+                      width: 15rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        color: var(
+                          --text-color-text-black-black-08,
+                          rgba(16, 20, 38, 0.8)
+                        );
+                        text-align: left;
+                        font-family: var(
+                          --text-sm-medium-font-family,
+                          'Inter-Medium',
+                          sans-serif
+                        );
+                        font-size: var(--text-sm-medium-font-size, 0.75rem);
+                        line-height: var(
+                          --text-sm-medium-line-height,
+                          1.125rem
+                        );
+                        font-weight: var(--text-sm-medium-font-weight, 500);
+                        position: relative;
+                      "
+                    >
+                      Description
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      background: var(--grey-200, #f7f9fc);
+                      border-style: solid;
+                      border-color: var(--grey-400, #e4e9f2);
+                      border-width: 0rem 0rem 0.0625rem 0rem;
+                      padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.5rem;
+                      align-items: center;
+                      justify-content: flex-start;
+                      flex: 1;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        color: var(
+                          --text-color-text-black-black-08,
+                          rgba(16, 20, 38, 0.8)
+                        );
+                        text-align: left;
+                        font-family: var(
+                          --text-sm-medium-font-family,
+                          'Inter-Medium',
+                          sans-serif
+                        );
+                        font-size: var(--text-sm-medium-font-size, 0.75rem);
+                        line-height: var(
+                          --text-sm-medium-line-height,
+                          1.125rem
+                        );
+                        font-weight: var(--text-sm-medium-font-weight, 500);
+                        position: relative;
+                      "
+                    >
+                      Note
+                    </div>
+                  </div>
+                </div>
+                {% for recommendation in recommendations %}
+                <div
+                  style="
+                    border-style: solid;
+                    border-color: var(--grey-300, #edf1f7);
+                    border-width: 0rem 0rem 0.0625rem 0rem;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0rem;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    align-self: stretch;
+                    flex-shrink: 0;
+                    position: relative;
+                  "
+                >
+                  <div
+                    style="
+                      padding: 0.625rem 0.75rem 0.625rem 0.75rem;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 0.25rem;
+                      align-items: flex-start;
+                      justify-content: flex-start;
+                      align-self: stretch;
+                      flex-shrink: 0;
+                      width: 9.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        color: var(
+                          --text-color-text-black-black-07,
+                          rgba(16, 20, 38, 0.7)
+                        );
+                        text-align: left;
+                        font-family: var(
+                          --text-sm-bold-font-family,
+                          'Inter-Bold',
+                          sans-serif
+                        );
+                        font-size: var(--text-sm-bold-font-size, 0.75rem);
+                        line-height: var(--text-sm-bold-line-height, 1.125rem);
+                        font-weight: var(--text-sm-bold-font-weight, 700);
+                        position: relative;
+                        align-self: stretch;
+                      "
+                    >
+                      {{ recommendation.name }}
+                    </div>
+                    <div
+                      style="
+                        color: var(
+                          --text-color-text-black-black-06,
+                          rgba(16, 20, 38, 0.6)
+                        );
+                        text-align: left;
+                        font-family: var(
+                          --text-sm-regular-font-family,
+                          'Inter-Regular',
+                          sans-serif
+                        );
+                        font-size: var(--text-sm-regular-font-size, 0.75rem);
+                        line-height: var(
+                          --text-sm-regular-line-height,
+                          1.125rem
+                        );
+                        font-weight: var(--text-sm-regular-font-weight, 400);
+                        position: relative;
+                        align-self: stretch;
+                      "
+                    >
+                      {{ recommendation.icd_code }}
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      padding: 0.625rem 0.75rem 0.625rem 0.75rem;
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.625rem;
+                      align-items: flex-start;
+                      justify-content: flex-start;
+                      align-self: stretch;
+                      flex-shrink: 0;
+                      width: 15rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        color: var(
+                          --text-color-text-black-black-07,
+                          rgba(16, 20, 38, 0.7)
+                        );
+                        text-align: left;
+                        font-family: var(
+                          --text-sm-regular-font-family,
+                          'Inter-Regular',
+                          sans-serif
+                        );
+                        font-size: var(--text-sm-regular-font-size, 0.75rem);
+                        line-height: var(
+                          --text-sm-regular-line-height,
+                          1.125rem
+                        );
+                        font-weight: var(--text-sm-regular-font-weight, 400);
+                        position: relative;
+                        flex: 1;
+                      "
+                    >
+                      {{ recommendation.description }}
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      padding: 0.625rem 0.75rem 0.625rem 0.75rem;
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0.625rem;
+                      align-items: flex-start;
+                      justify-content: flex-start;
+                      align-self: stretch;
+                      flex: 1;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        color: var(
+                          --text-color-text-black-black-06,
+                          rgba(16, 20, 38, 0.6)
+                        );
+                        text-align: left;
+                        font-family: var(
+                          --text-sm-regular-font-family,
+                          'Inter-Regular',
+                          sans-serif
+                        );
+                        font-size: var(--text-sm-regular-font-size, 0.75rem);
+                        line-height: var(
+                          --text-sm-regular-line-height,
+                          1.125rem
+                        );
+                        font-weight: var(--text-sm-regular-font-weight, 400);
+                        position: relative;
+                        align-self: stretch;
+                        flex: 1;
+                      "
+                    >
+                      {{ recommendation.reason_for_deviation }}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
