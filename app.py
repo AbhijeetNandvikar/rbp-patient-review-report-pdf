@@ -5,7 +5,10 @@ from playwright.async_api import async_playwright
 
 
 env = Environment(loader=FileSystemLoader('.'))
-template = env.get_template('index.html')
+template = env.get_template('without-header-footer.html')
+
+header = env.get_template('header.html')
+footer = env.get_template('footer.html')
 
 mockData = {
   "review_id": 1,
@@ -56,7 +59,7 @@ mockData = {
               "name": "Adjuvant Hormone Therapy",
               "description": "Adjuvant hormone therapy with tamoxifen is recommended for patients with hormone receptor-positive breast cancer.",
               "reason_for_deviation": "This is a sample note for the recommendation",
-              "not_applicable": "true",
+              "not_applicable": True,
               "additional_notes": "",
               "is_non_standard": False,
               "code": "A0010",
@@ -369,8 +372,17 @@ async def generate_pdf(html_content, output_file):
         # Set the HTML content for the page
         await page.set_content(html_content)
 
+        pdf_config = {
+            "path": 'output.pdf',
+            "format": "A4",
+            "print_background": True,
+            "display_header_footer": True,
+            "header_template": header.render(),
+            "footer_template": footer.render()
+        }
+
         # Generate a PDF from the page
-        await page.pdf(path=output_file, format="A4")
+        await page.pdf(**pdf_config)
 
         # Close the browser
         await browser.close()
