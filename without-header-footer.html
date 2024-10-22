@@ -103,7 +103,7 @@
               'Inter-Bold',
               sans-serif
             );
-            font-size: var(--text-sm-bold-font-size, 0.75rem);
+            font-size: var(--text-sm-bold-font-size, 14px);
             line-height: var(--text-sm-bold-line-height, 1.125rem);
             font-weight: var(--text-sm-bold-font-weight, 700);
             position: relative;
@@ -495,7 +495,7 @@
               'Inter-Bold',
               sans-serif
             );
-            font-size: var(--text-sm-bold-font-size, 0.75rem);
+            font-size: var(--text-sm-bold-font-size, 14px);
             line-height: var(--text-sm-bold-line-height, 1.125rem);
             font-weight: var(--text-sm-bold-font-weight, 700);
             position: relative;
@@ -762,7 +762,7 @@
               'Inter-Bold',
               sans-serif
             );
-            font-size: var(--text-sm-bold-font-size, 0.75rem);
+            font-size: var(--text-sm-bold-font-size, 14px);
             line-height: var(--text-sm-bold-line-height, 1.125rem);
             font-weight: var(--text-sm-bold-font-weight, 700);
             position: relative;
@@ -990,7 +990,8 @@
                 position: relative;
               "
             >
-              {% for group in plan.recommendation_groups %}
+              {% if plan.recommendation_groups|length > 0 %} {% for group in
+              plan.recommendation_groups %}
               <div
                 style="
                   display: flex;
@@ -1064,6 +1065,182 @@
                   </div>
                   <div
                     style="
+                      display: flex;
+                      flex-direction: row;
+                      gap: 0rem;
+                      align-items: flex-start;
+                      justify-content: flex-start;
+                      background-color: #f7f9fc !important;
+                      align-self: stretch;
+                      flex-shrink: 0;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        border-style: solid;
+                        border-color: var(--grey-400, #e4e9f2);
+                        border-width: 0rem 0rem 0.0625rem 0rem;
+                        padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 0.5rem;
+                        align-items: center;
+                        justify-content: flex-start;
+                        flex-shrink: 0;
+                        width: 9.5rem;
+                        position: relative;
+                      "
+                    >
+                      <div
+                        style="
+                          color: var(
+                            --text-color-text-black-black-08,
+                            rgba(16, 20, 38, 0.8)
+                          );
+                          text-align: left;
+                          font-family: var(
+                            --text-sm-medium-font-family,
+                            'Inter-Medium',
+                            sans-serif
+                          );
+                          font-size: var(--text-sm-medium-font-size, 0.75rem);
+                          line-height: var(
+                            --text-sm-medium-line-height,
+                            1.125rem
+                          );
+                          font-weight: var(--text-sm-medium-font-weight, 500);
+                          position: relative;
+                        "
+                      >
+                        Recommendation
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        border-style: solid;
+                        border-color: var(--grey-400, #e4e9f2);
+                        border-width: 0rem 0rem 0.0625rem 0rem;
+                        padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 0.5rem;
+                        align-items: center;
+                        justify-content: flex-start;
+                        flex-shrink: 0;
+                        width: 15rem;
+                        position: relative;
+                      "
+                    >
+                      <div
+                        style="
+                          color: var(
+                            --text-color-text-black-black-08,
+                            rgba(16, 20, 38, 0.8)
+                          );
+                          text-align: left;
+                          font-family: var(
+                            --text-sm-medium-font-family,
+                            'Inter-Medium',
+                            sans-serif
+                          );
+                          font-size: var(--text-sm-medium-font-size, 0.75rem);
+                          line-height: var(
+                            --text-sm-medium-line-height,
+                            1.125rem
+                          );
+                          font-weight: var(--text-sm-medium-font-weight, 500);
+                          position: relative;
+                        "
+                      >
+                        Description
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        border-style: solid;
+                        border-color: var(--grey-400, #e4e9f2);
+                        border-width: 0rem 0rem 0.0625rem 0rem;
+                        padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 0.5rem;
+                        align-items: center;
+                        justify-content: flex-start;
+                        flex: 1;
+                        position: relative;
+                      "
+                    >
+                      <div
+                        style="
+                          color: var(
+                            --text-color-text-black-black-08,
+                            rgba(16, 20, 38, 0.8)
+                          );
+                          text-align: left;
+                          font-family: var(
+                            --text-sm-medium-font-family,
+                            'Inter-Medium',
+                            sans-serif
+                          );
+                          font-size: var(--text-sm-medium-font-size, 0.75rem);
+                          line-height: var(
+                            --text-sm-medium-line-height,
+                            1.125rem
+                          );
+                          font-weight: var(--text-sm-medium-font-weight, 500);
+                          position: relative;
+                        "
+                      >
+                        Note
+                      </div>
+                    </div>
+                  </div>
+
+                  {% if not group.recommendations %}
+                  <div
+                    style="
+                      padding: 0.625rem 0.75rem;
+                      width: 100%;
+                      color: var(
+                        --text-color-text-black-black-06,
+                        rgba(16, 20, 38, 0.6)
+                      );
+                      text-align: center;
+                      font-family: var(
+                        --text-sm-regular-font-family,
+                        'Inter-Regular',
+                        sans-serif
+                      );
+                      font-size: var(--text-sm-regular-font-size, 0.75rem);
+                      line-height: var(--text-sm-regular-line-height, 1.125rem);
+                      font-weight: var(--text-sm-regular-font-weight, 400);
+                      border: 1px solid var(--grey-300, #edf1f7);
+                      border-top: none;
+                      display: block;
+                      position: relative;
+                      z-index: 1;
+                      min-height: 2.5rem;
+                      overflow: visible;
+                      opacity: 1;
+                      visibility: visible;
+                      color: var(
+                        --text-color-text-black-black-07,
+                        rgba(16, 20, 38, 0.7)
+                      );
+                      text-align: center;
+                      font-size: 12px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: 18px;
+                    "
+                  >
+                    No Recommendation(s) Available.
+                  </div>
+                  {% endif %}
+
+                  <div
+                    style="
                       border-radius: 0.25rem;
                       display: flex;
                       flex-direction: column;
@@ -1088,157 +1265,6 @@
                         position: relative;
                       "
                     >
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: row;
-                          gap: 0rem;
-                          align-items: flex-start;
-                          justify-content: flex-start;
-                          background-color: #f7f9fc !important;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          position: relative;
-                        "
-                      >
-                        <div
-                          style="
-                            border-style: solid;
-                            border-color: var(--grey-400, #e4e9f2);
-                            border-width: 0rem 0rem 0.0625rem 0rem;
-                            padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
-                            display: flex;
-                            flex-direction: row;
-                            gap: 0.5rem;
-                            align-items: center;
-                            justify-content: flex-start;
-                            flex-shrink: 0;
-                            width: 9.5rem;
-                            position: relative;
-                          "
-                        >
-                          <div
-                            style="
-                              color: var(
-                                --text-color-text-black-black-08,
-                                rgba(16, 20, 38, 0.8)
-                              );
-                              text-align: left;
-                              font-family: var(
-                                --text-sm-medium-font-family,
-                                'Inter-Medium',
-                                sans-serif
-                              );
-                              font-size: var(
-                                --text-sm-medium-font-size,
-                                0.75rem
-                              );
-                              line-height: var(
-                                --text-sm-medium-line-height,
-                                1.125rem
-                              );
-                              font-weight: var(
-                                --text-sm-medium-font-weight,
-                                500
-                              );
-                              position: relative;
-                            "
-                          >
-                            Recommendation
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            border-style: solid;
-                            border-color: var(--grey-400, #e4e9f2);
-                            border-width: 0rem 0rem 0.0625rem 0rem;
-                            padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
-                            display: flex;
-                            flex-direction: row;
-                            gap: 0.5rem;
-                            align-items: center;
-                            justify-content: flex-start;
-                            flex-shrink: 0;
-                            width: 15rem;
-                            position: relative;
-                          "
-                        >
-                          <div
-                            style="
-                              color: var(
-                                --text-color-text-black-black-08,
-                                rgba(16, 20, 38, 0.8)
-                              );
-                              text-align: left;
-                              font-family: var(
-                                --text-sm-medium-font-family,
-                                'Inter-Medium',
-                                sans-serif
-                              );
-                              font-size: var(
-                                --text-sm-medium-font-size,
-                                0.75rem
-                              );
-                              line-height: var(
-                                --text-sm-medium-line-height,
-                                1.125rem
-                              );
-                              font-weight: var(
-                                --text-sm-medium-font-weight,
-                                500
-                              );
-                              position: relative;
-                            "
-                          >
-                            Description
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            border-style: solid;
-                            border-color: var(--grey-400, #e4e9f2);
-                            border-width: 0rem 0rem 0.0625rem 0rem;
-                            padding: 0.3125rem 0.75rem 0.3125rem 0.75rem;
-                            display: flex;
-                            flex-direction: row;
-                            gap: 0.5rem;
-                            align-items: center;
-                            justify-content: flex-start;
-                            flex: 1;
-                            position: relative;
-                          "
-                        >
-                          <div
-                            style="
-                              color: var(
-                                --text-color-text-black-black-08,
-                                rgba(16, 20, 38, 0.8)
-                              );
-                              text-align: left;
-                              font-family: var(
-                                --text-sm-medium-font-family,
-                                'Inter-Medium',
-                                sans-serif
-                              );
-                              font-size: var(
-                                --text-sm-medium-font-size,
-                                0.75rem
-                              );
-                              line-height: var(
-                                --text-sm-medium-line-height,
-                                1.125rem
-                              );
-                              font-weight: var(
-                                --text-sm-medium-font-weight,
-                                500
-                              );
-                              position: relative;
-                            "
-                          >
-                            Note
-                          </div>
-                        </div>
-                      </div>
                       {% for recommendation in group.recommendations %}
                       <div
                         style="
@@ -1493,7 +1519,39 @@
                   </div>
                 </div>
               </div>
-              {% endfor %}
+              {% endfor %} {% else %}
+              <div
+                style="
+                  color: var(
+                    --text-color-text-black-black-06,
+                    rgba(16, 20, 38, 0.6)
+                  );
+                  text-align: left;
+                  font-family: var(
+                    --text-sm-regular-font-family,
+                    'Inter-Regular',
+                    sans-serif
+                  );
+                  font-size: var(--text-sm-regular-font-size, 0.75rem);
+                  line-height: var(--text-sm-regular-line-height, 1.125rem);
+                  font-weight: var(--text-sm-regular-font-weight, 400);
+                  position: relative;
+                  align-self: stretch;
+                  color: var(
+                    --text-color-text-black-black-05,
+                    rgba(16, 20, 38, 0.5)
+                  );
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 18px;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                "
+              >
+                No group(s) Available.
+              </div>
+              {% endif %}
             </div>
             {% endfor %}
           </div>
