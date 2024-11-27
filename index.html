@@ -506,7 +506,7 @@
                       position: relative;
                     "
                   >
-                    {{patient_name}}
+                    {{patient_name}},
                   </div>
                 </div>
                 <div
@@ -558,7 +558,7 @@
                       position: relative;
                     "
                   >
-                    {{patient_id}}
+                    {{patient_id}},
                   </div>
                 </div>
                 <div
@@ -610,7 +610,7 @@
                       position: relative;
                     "
                   >
-                    {{patient_dob}}
+                    {{patient_dob}},
                   </div>
                 </div>
                 <div
@@ -662,7 +662,7 @@
                       position: relative;
                     "
                   >
-                    {{patient_sex}}
+                    {{patient_sex}},
                   </div>
                 </div>
               </div>
@@ -726,7 +726,9 @@
                       position: relative;
                     "
                   >
-                    {{patient_insurance_plan}}
+                  <script>
+                    document.getElementById('insurancePlan').textContent = '{{patient_insurance_plan}}' || '-';
+                  </script>
                   </div>
                 </div>
                 <div
@@ -778,7 +780,7 @@
                       position: relative;
                     "
                   >
-                    {{patient_member_id}}
+                    {{patient_member_id or '-'}}
                   </div>
                 </div>
               </div>
@@ -1821,7 +1823,10 @@
                                     line-height: 18px; /* 150% */
                                   "
                                 >
-                                  Reason for Deviation:
+                                {{ recommendation.reason_for_deviation ? 
+                                  'Reason for Deviation:' : 
+                                  ''
+                                  }}
                                 </span>
                                 {{ recommendation.reason_for_deviation }}
                               </div>
