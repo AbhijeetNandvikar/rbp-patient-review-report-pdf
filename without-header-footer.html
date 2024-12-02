@@ -456,7 +456,11 @@
                   position: relative;
                 "
               >
-                {{patient_member_id or '-'}}
+              {% if patient_member_id %}   
+                {{ patient_member_id }}
+              {% else %}
+                -
+              {% endif %}
               </div>
             </div>
           </div>
@@ -1495,6 +1499,7 @@
                               flex: 1;
                             "
                           >
+                          {% if recommendation.not_applicable %}  
                             <span
                               style="
                                 color: var(
@@ -1507,9 +1512,10 @@
                                 line-height: 18px; /* 150% */
                               "
                             >
-                              Reason for Deviation:
+                            Reason for Deviation:
                             </span>
                             {{ recommendation.reason_for_deviation }}
+                          {% endif %}
                           </div>
                           {% endif %}
                         </div>
