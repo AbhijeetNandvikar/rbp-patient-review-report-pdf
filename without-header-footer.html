@@ -184,7 +184,7 @@
                   position: relative;
                 "
               >
-                {{patient_name}}
+                {{patient_name}},
               </div>
             </div>
             <div
@@ -236,7 +236,7 @@
                   position: relative;
                 "
               >
-                {{patient_id}}
+                {{patient_id}},
               </div>
             </div>
             <div
@@ -288,7 +288,7 @@
                   position: relative;
                 "
               >
-                {{patient_dob}}
+                {{patient_dob}},
               </div>
             </div>
             <div
@@ -404,7 +404,7 @@
                   position: relative;
                 "
               >
-                {{patient_insurance_plan}}
+                {{patient_insurance_plan or '-'}},
               </div>
             </div>
             <div
@@ -456,7 +456,11 @@
                   position: relative;
                 "
               >
-                {{patient_member_id}}
+              {% if patient_member_id %}   
+                {{ patient_member_id }}
+              {% else %}
+                -
+              {% endif %}
               </div>
             </div>
           </div>
@@ -1495,6 +1499,7 @@
                               flex: 1;
                             "
                           >
+                          {% if recommendation.not_applicable %}  
                             <span
                               style="
                                 color: var(
@@ -1507,9 +1512,10 @@
                                 line-height: 18px; /* 150% */
                               "
                             >
-                              Reason for Deviation:
+                            Reason for Deviation:
                             </span>
                             {{ recommendation.reason_for_deviation }}
+                          {% endif %}
                           </div>
                           {% endif %}
                         </div>
